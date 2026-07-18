@@ -1,0 +1,67 @@
+class DormSphere:
+  def __init__(self):
+      self.rooms = {
+          101: None,
+          102: None,
+          103: None,
+          104: None
+      }
+
+def view_rooms(self):
+  print("\nRoom Details")
+  for room, student in self.rooms.items():
+      print(
+          room,
+          ":",
+          student if student else "Available"
+          )
+
+def allocate_room(self):
+  name = input("Student name: ")
+
+  for room in self.rooms:
+      if self.rooms[room] is None:
+          self.rooms[room] = name
+          print("Room allocated:", room)
+          return
+
+      print("No rooms available")
+
+def remove_student(self):
+  name = input("Student name: ")
+
+  for room in self.rooms:
+      if self.rooms[room] == name:
+          self.rooms[room] = None
+          print("Student removed")
+          return
+
+      print("Student not found")
+
+
+hostel = DormSphere()
+
+while True:
+  print("""
+1. View Rooms
+2. Allocate Room
+3. Remove Student
+4. Exit
+""")
+
+  choice = input("Choice: ")
+
+  if choice == "1":
+      hostel.view_rooms()
+
+  elif choice == "2":
+      hostel.allocate_room()
+
+  elif choice == "3":
+      hostel.remove_student()
+
+  elif choice == "4":
+      break
+
+  else:
+      print("Invalid option")
