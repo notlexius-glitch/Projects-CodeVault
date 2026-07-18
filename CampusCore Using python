@@ -1,0 +1,74 @@
+students = []
+
+
+def add_student():
+    name = input("Student name: ")
+    course = input("Course: ")
+    year = input("Year: ")
+
+    student = {
+        "name": name,
+        "course": course,
+        "year": year
+    }
+
+    students.append(student)
+
+    print("Student added")
+
+
+def view_students():
+
+if not students:
+    print("No records found")
+    return
+
+    print("\nStudent Records")
+
+          for s in students:
+              print(
+                  s["name"],
+                  "|",
+                  s["course"],
+                  "| Year",
+                  s["year"]
+              )
+
+
+def search_student():
+          
+            name = input("Search name: ")
+          
+            for s in students:
+                if s["name"] == name:
+                    print("Found:", s)
+                    return
+          
+            print("Student not found")
+
+
+while True:
+
+    print("""
+1. Add Student
+2. View Students
+3. Search Student
+4. Exit
+""")
+
+choice = input("Choice: ")
+
+if choice == "1":
+    add_student()
+
+elif choice == "2":
+    view_students()
+
+elif choice == "3":
+    search_student()
+
+elif choice == "4":
+    break
+
+else:
+    print("Invalid option")
