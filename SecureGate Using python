@@ -1,0 +1,62 @@
+users = {}
+
+
+def register():
+username = input("Create username: ")
+email = input("Email: ")
+password = input("Password: ")
+
+users[username] = {
+    "email": email,
+    "password": password
+}
+
+print("Registration successful")
+
+
+def login():
+username = input("Username: ")
+password = input("Password: ")
+
+if username in users:
+    if users[username]["password"] == password:
+        print("Login successful")
+        print("Welcome", username)
+    else:
+        print("Wrong password")
+else:
+    print("User not found")
+
+
+def show_users():
+print("\nRegistered Users")
+
+for user in users:
+    print(user)
+
+
+while True:
+
+print("""
+1. Register
+2. Login
+3. Show Users
+4. Exit
+""")
+
+choice = input("Choice: ")
+
+if choice == "1":
+    register()
+
+elif choice == "2":
+    login()
+
+elif choice == "3":
+    show_users()
+
+elif choice == "4":
+    break
+
+else:
+    print("Invalid choice")
